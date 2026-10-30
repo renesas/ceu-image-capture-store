@@ -1,4 +1,5 @@
-# Introduction #
+# CEU
+
 This example project demonstrates the basic functionality of CEU driver on Renesas RA MCUs based on FSP. Upon successful initialization of the CEU and camera setup:
 * **For EK-RA8D1, EK-RA8P1, EK-RA8D2:**
   * The user is requested to select memory (1. SDRAM and 2. SRAM) to save image.
