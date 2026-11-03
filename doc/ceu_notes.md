@@ -1,11 +1,13 @@
 # CEU
 
 This example project demonstrates the basic functionality of CEU driver on Renesas RA MCUs based on FSP. Upon successful initialization of the CEU and camera setup:
+
 * **For EK-RA8D1, EK-RA8P1, EK-RA8D2:**
   * The user is requested to select memory (1. SDRAM and 2. SRAM) to save image.
   * Press '1' to select 'SDRAM' to choose SXGA (1280 x 960) format and store the image in SDRAM.
   * Press '2' to select 'SRAM' to choose VGA (640 x 480) format and store the image in SRAM.
   * By default, the example project configures the camera in test pattern mode, and the image captured is a color bar. The user can get the actual image by modifying the macro CAM_TEST_PATTERN in the camera_sensor.h file with a value of 0U.
+
 * **For FPB-RA8E1:**
   * The user can press any key to capture and store a QVGA (320 x 240) format image in SRAM.
   * By default, the example project configures in actual image test mode. Set CAM_TEST_PATTERN to 1U to enable the test pattern mode.
@@ -17,15 +19,18 @@ The captured image can be viewed in e2studio using the 'memory viewer'.
 Please refer to the [Example Project Usage Guide](https://github.com/renesas/ra-fsp-examples/blob/master/example_projects/Example%20Project%20Usage%20Guide.pdf) for general information on example projects and [readme.txt](./readme.txt) for specifics of operation.
 
 ## Required Resources ##
+
 To build and run the CEU example project, the following resources are needed.
 
 ### Software ###
+
 * Renesas Flexible Software Package (FSP): Version 6.5.0
 * e2 studio: Version 2026-04.2
 * LLVM Embedded Toolchain for ARM: Version 21.1.1
 * Terminal Console Application: Tera Term or a similar application
 
 ### Hardware ###
+
 * Supported RA boards: EK-RA8D1, FPB-RA8E1, EK-RA8P1, EK-RA8D2.
   *	1 x Renesas RA board.
   *	1 x USB cable for programming and debugging (USB cable type varies by board model).
@@ -40,6 +45,7 @@ To build and run the CEU example project, the following resources are needed.
 * For EK-RA8D1:  
   * Connect the camera module to the camera connector J59 on the RA board.
   * Set the configuration switches on the RA board as below:
+
       |     SW1     | | Status      |
       |-------------|-|-------------|
       |SW1-1 PMOD1	|-|     OFF     |
@@ -61,6 +67,7 @@ To build and run the CEU example project, the following resources are needed.
   * Connect the camera module to the Camera Expansion Port J35 on the RA board.
   * Open J41 to use P405, P406 for Camera function.
   * Set the configuration switches on the RA board as below:
+
       |     SW4         | | Status      |
       |-----------------|-|-------------|
       |SW4-1 PMOD1_SEL0	|-|     OFF     |
@@ -126,6 +133,7 @@ This section describes FSP Configurator properties which are important or differ
 
 **For FPB-RA8E1:**  
 **Configuration Properties for using g_ceu_qvga instance**
+
 |   Module Property Path and Identifier   |   Default Value   |   Used Value   |   Reason   |
 |-----------------------------------------|-------------------|----------------|------------|
 | configuration.xml > Stacks > g_ceu_qvga Capture Engine Unit (r_ceu) > Properties > Settings > Property > Module g_ceu_qvga Capture Engine Unit (r_ceu) > Input > Capture Specifications > Horizontal capture resolution | 640 | 320 | Width of image resolution QVGA. |
